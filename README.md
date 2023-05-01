@@ -1,6 +1,6 @@
-<a name="readme-top"></a>
+<!-- @format -->
 
-<!-- TABLE OF CONTENTS -->
+# awesome-book<!-- @format -->
 
 # 📗 Table of Contents
 
@@ -15,7 +15,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -26,96 +26,89 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 awesome-book <a name="about-project"></a>
+# 📖 ["awesome book project of Microverse] <a name="about-project"></a>
 
+> This project is about adding books to the page and saving in local storage
 
-**awesome-book** This project is  a simple website for saving book name and delete it and also show the book list.
+**[awesome book project of Microverse]** is a great project for beginners to learn how to build a simple use objects
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
-  <summary>Client</summary>
-  <ul>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/html">HTML</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a></li>
-  </ul>
-</details>
-
+- **HTML**
+- **CSS**
+- **JS**
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-
-- **[HTML semantic tag]**
-- **[Javascript object]**
-
+- **Using Linters**
+- **objects for dynamic manipulation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- LIVE DEMO -->
 
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link] ()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-
 To get a local copy up and running, follow these steps.
-
-### Prerequisites
-
-In order to run this project you need:
-
-
-
-```sh
- HTML & CSS supportive browser
-```
 
 ### Setup
 
-Clone this repository to your desired folder:
+Install [Node Js](https://nodejs.org/en) and [NPM](https://docs.npmjs.com/cli/v6/commands/npm-install) and [Git](https://git-scm.com/downloads) on your local computer
 
-
-```sh
-  cd my-folder
-  git clone git@github.com:ghermaico135/awesome-book.git
-```
+> Please first check this video most of your questions answer are here : [video link]
 
 ### Install
 
-Install this project with:
-
+pin your commandline (if your are on windows ) or Terminal (if you are on Mac or Linux) and paste this command:
 
 ```sh
-  Use code editor(e.g VScode) and clone the repo.
+git clone https://github.com/ghermaico135/awesome-book.git
 ```
+
+then you will see the **awesome-book** on your system then type this:
+
+```sh
+cd awesome-book
+```
+
+Now you successfully installed it.
 
 ### Usage
 
-To run the project, open the html file
+Inside **awesome-book** you can see `index.html` file double click it
+to open it inside your browser.
 
+### Run tests
+
+<!-- To run tests, run the following command: -->
+
+### Deployment
+
+You can deploy this project using [Netlify](https://www.netlify.com/) or [Github Pages]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Author Rabaya Rabu <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
+👤 **Michael okbamichael**
 
-👤 **Rabaya Rabu**
-
-- GitHub: [@rabayarabu](https://github.com/githubhandle)
-- Twitter: [@rabaya_rabu](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/rabaya-rabu-142721169/)
-
-👤 **Michael Gebrezghiabihier okbamichael**
-
-- GitHub: [@]()
-- Twitter: [@]()
-- LinkedIn: [LinkedIn]()
+- GitHub: [ghermaico135](https://github.com/ghermaico135)
+- Twitter: [@Mikidarling3](https://twitter.com/@Mikidarling3)
+- LinkedIn: [Michael okbamichael](https://www.linkedin.com/in/michael-okbamichael-966106263/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,9 +116,9 @@ To run the project, open the html file
 
 ## 🔭 Future Features <a name="future-features"></a>
 
+> Describe 1 - 3 features you will add to the project.
 
-- [ ] **[using javascript classes]**
-
+- **Adding other pages like navigation and listing page**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -135,7 +128,7 @@ To run the project, open the html file
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [https://github.com/ghermaico135/awesome-book/issues](../../issues/).
+Feel free to check the [issues page] (https://github.com/ghermaico135/awesome-book/issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -143,8 +136,7 @@ Feel free to check the [https://github.com/ghermaico135/awesome-book/issues](../
 
 ## ⭐️ Show your support <a name="support"></a>
 
-
-If you like this project, you are welcome to contribute or modify this project. You can also contact me on Linkedin. It is always pleasure to hear from you.
+If you like this project don't forget to leave a `start`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -152,12 +144,9 @@ If you like this project, you are welcome to contribute or modify this project. 
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-
-I would like to thank Microverse and Entire Microverse team. And also thankful to the respective designer of this project Cindy Shin.
+I would like to thank Microverse
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 

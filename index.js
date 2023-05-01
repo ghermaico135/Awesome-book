@@ -1,14 +1,10 @@
+/** @format */
+
 const bookList = document.querySelector('.booklist');
-const form = document.querySelector('#form');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const addBtn = document.querySelector('#addBtn');
 let userBooks = JSON.parse(localStorage.getItem('userBooks')) || [];
-
-// getItems
-window.addEventListener('load', () => {
-  showList();
-});
 
 // setItems
 function addBook() {
@@ -41,12 +37,15 @@ function showList() {
   bookList.innerHTML = content;
 }
 
+// getItems
+window.addEventListener('load', () => {
+  showList();
+});
+
 // remove
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('removeBtn')) {
-    userBooks = userBooks.filter((book) => {
-      return book.id.toString() !== e.target.id;
-    });
+    userBooks = userBooks.filter((book) => book.id.toString() !== e.target.id);
 
     localStorage.setItem('userBooks', JSON.stringify(userBooks));
   }

@@ -1,80 +1,77 @@
+/** @format */
 
-const form = document.querySelector('#form')
-const title = document.querySelector('#title')
-const author = document.querySelector('#author')
-const button = document.querySelector('#button')
-const bookList = document.querySelector('.booklist')
+const bookList = document.querySelector(".booklist");
+const form = document.querySelector("#form");
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const addBtn = document.querySelector("#addBtn");
+let userBooks = [];
 
+// getItems
+window.addEventListener("load", () => {
+	const books = JSON.parse(localStorage.getItem("userBooks"));
+	title.value = books.bookTitle;
+	author.value = books.bookAuthor;
+});
 
-// setting value to browser localstorage
-
-form.addEventListener('submit' , (e) =>{
-  e.preventDefault()
-  addBook();
-})
-
-
-window.addEventListener('load' ,() =>{
- showList();
-
-})
-
-
-form.addEventListener('change' , (e) =>{
-  e.preventDefault()
-
-
-})
-
+// setItems
 function addBook() {
-  if(title.value === '' && author.value === ''){
-    alert("Please fill up all fields");
-  } else {
-    let  userBooks = JSON.parse(localStorage.getItem('userBooks')) || [];
-    let id = Math.floor(Math.random()*10000);
-    userBooks.push({
-      id : id,
-      title : title.value,
-      author : author.value
-    })
-    
-    localStorage.setItem('userBooks',JSON.stringify(userBooks))
-    title.value = "";
-    author.value = "";
-    showList();
-  }
-
+	if (title.value === "" && author.value === "") {
+		alert("Please fill up all fields");
+	} else {
+		userBooks.push({
+			id: Math.floor(Math.random() * 1000),
+			bookTitle: title.value,
+			bookAuthor: author.value,
+		});
+		localStorage.setItem("userBooks", JSON.stringify(userBooks));
+	}
 }
 
+// Displaying
 function showList() {
-  
-  let  userBooks = JSON.parse(localStorage.getItem('userBooks')) || [];
-  let div = document.createElement('div');
-  for(let i = 0; i < userBooks.length; i++){
-    
-    div.innerHTML = `<p class="title">${userBooks[i].title}</p><br>
-    <p class="author">${userBooks[i].author}</p><br>
-    <button type="submit" class="deletebtn" id=${userBooks[i].id}>Remove</button>
-    <br>
+	const books = JSON.parse(localStorage.getItem("userBooks"));
+	let content = "";
+	books.forEach((book) => {
+		content += `
+    <div>
+          <p class="title">${book.bookTitle}</p>
+          <p class="author">${book.bookAuthor}</p><br>
+          <button type="submit" class="removeBtn" id="${book.id}">Remove</button>
+          <br>
+    </div>
     `;
-  }
-  showList();
-  bookList.appendChild(div);
+	});
 
-};
-function removeBook(id) {
-  let userBooks = JSON.parse(localStorage.getItem('userBooks'));
-  userBooks = userBooks.filter(e =>e.id != id)
-  localStorage.setItem('userBooks', JSON.stringify(userBooks))
-  showList();
+	bookList.innerHTML = content;
 }
 
-bookList.addEventListener('click', (e) => {
+// remove
+document.addEventListener("click", (e) => {
+	if (e.target.classList.contains("removeBtn")) {
+		userBooks = userBooks.filter((book) => {
+			return book.id.toString() !== e.target.id;
+		});
 
-  if(e.target.classList.contains("deletebtn")){
-    let id = e.target.id;
-    removeBook(id);
-    
-  }
-})
-showList();
+		localStorage.setItem("userBooks", JSON.stringify(userBooks));
+	}
+	document.querySelectorAll(".removeBtn").forEach((deleteBtn) => {
+		deleteBtn.addEventListener("click", () => {
+			console.log("test");
+		});
+	});
+});
+
+// Add
+addBtn.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	addBook();
+	showList();
+	title.value = "";
+	author.value = "";
+});
+
+// document.addEventListener('DOMContentLoaded', () =>{
+//   showList();
+// })

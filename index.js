@@ -12,25 +12,48 @@ const  userBooks = [{
 
 form.addEventListener('submit' , (e) =>{
   e.preventDefault()
-  userBooks.bookTitle = title.value
-  userBooks.bookAuthor = author.value
-  localStorage.setItem('userBooks',JSON.stringify(userBooks))
+  addBook();
+  showList();
+
 
 })
  
 
 window.addEventListener('load' ,() =>{
   const books = JSON.parse(localStorage.getItem('userBooks'))
-  title.value = userBooks.bookTitle
-  author.value = userBooks.bookAuthor
+  title.value = books.bookTitle
+  author.value = books.bookAuthor
 
 })
 
 
 form.addEventListener('change' , (e) =>{
   e.preventDefault()
-  userBooks.bookTitle = title.value
-  userBooks.bookAuthor = author.value
-  localStorage.setItem('userBooks',JSON.stringify(userBooks))
+
 
 })
+
+function addBook() {
+  if(title.value === '' && author.value === ''){
+    alert("Please fill up all fields");
+  } else {
+    userBooks.bookTitle = title.value
+    userBooks.bookAuthor = author.value
+    localStorage.setItem('userBooks',JSON.stringify(userBooks))
+    title.value = "";
+    author.value = "";
+  }
+  
+
+
+}
+function showList() {
+  let div = document.createElement('div');
+  div.innerHTML = `<p class="title">${books.bookTitle}</p><br>
+  <p class="author">${books.bookList}</p><br>
+  <button type="submit" id="removeBtn">Remove</button>
+  <br>
+  `;
+  bookList.appendChild(div);
+
+};

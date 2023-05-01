@@ -1,11 +1,9 @@
-const bookList = document.querySelector('.booklist')
+
 const form = document.querySelector('#form')
 const title = document.querySelector('#title')
 const author = document.querySelector('#author')
-const  userBooks = [{
-  bookTitle:"" ,bookAuthor:""
-}]
-
+const button = document.querySelector('#button')
+const bookList = document.querySelector('.booklist')
 
 
 // setting value to browser localstorage
@@ -13,16 +11,11 @@ const  userBooks = [{
 form.addEventListener('submit' , (e) =>{
   e.preventDefault()
   addBook();
-  showList();
-
-
 })
- 
+
 
 window.addEventListener('load' ,() =>{
-  const books = JSON.parse(localStorage.getItem('userBooks'))
-  title.value = books.bookTitle
-  author.value = books.bookAuthor
+ showList();
 
 })
 
@@ -37,23 +30,51 @@ function addBook() {
   if(title.value === '' && author.value === ''){
     alert("Please fill up all fields");
   } else {
-    userBooks.bookTitle = title.value
-    userBooks.bookAuthor = author.value
+    let  userBooks = JSON.parse(localStorage.getItem('userBooks')) || [];
+    let id = Math.floor(Math.random()*10000);
+    userBooks.push({
+      id : id,
+      title : title.value,
+      author : author.value
+    })
+    
     localStorage.setItem('userBooks',JSON.stringify(userBooks))
     title.value = "";
     author.value = "";
+    showList();
   }
-  
-
 
 }
+
 function showList() {
+  
+  let  userBooks = JSON.parse(localStorage.getItem('userBooks')) || [];
   let div = document.createElement('div');
-  div.innerHTML = `<p class="title">${books.bookTitle}</p><br>
-  <p class="author">${books.bookList}</p><br>
-  <button type="submit" id="removeBtn">Remove</button>
-  <br>
-  `;
+  for(let i = 0; i < userBooks.length; i++){
+    
+    div.innerHTML = `<p class="title">${userBooks[i].title}</p><br>
+    <p class="author">${userBooks[i].author}</p><br>
+    <button type="submit" class="deletebtn" id=${userBooks[i].id}>Remove</button>
+    <br>
+    `;
+  }
+  showList();
   bookList.appendChild(div);
 
 };
+function removeBook(id) {
+  let userBooks = JSON.parse(localStorage.getItem('userBooks'));
+  userBooks = userBooks.filter(e =>e.id != id)
+  localStorage.setItem('userBooks', JSON.stringify(userBooks))
+  showList();
+}
+
+bookList.addEventListener('click', (e) => {
+
+  if(e.target.classList.contains("deletebtn")){
+    let id = e.target.id;
+    removeBook(id);
+    
+  }
+})
+showList();

@@ -4,7 +4,6 @@ const bookList = document.querySelector(".booklist");
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const addBtn = document.querySelector("#addBtn");
-// let userBooks = JSON.parse(localStorage.getItem('userBooks')) || [];
 
 // book
 
@@ -14,6 +13,12 @@ class Books {
 		this.author = author;
 	}
 }
+class BookList {
+	contructor() {
+		this.books = [];
+	}
+}
+
 
 // userInterface
 

@@ -1,3 +1,37 @@
-.title {
-  color: black;
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  overflow: auto;
+}
+
+#showBook {
+  visibility: hidden;
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#addBook {
+  visibility: hidden;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#showContact {
+  visibility: hidden;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#footer-color {
+  background-color: #464444;
 }

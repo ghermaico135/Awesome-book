@@ -24,8 +24,8 @@ class Book {
   addBooks(title, author) {
     this.userBook.push({
       id: Math.floor(Math.random() * 1000),
-      title: title,
-      author: author,
+      title,
+      author,
     });
   }
 
@@ -33,12 +33,17 @@ class Book {
     let content = '';
     this.userBook.forEach((book) => {
       content += `
-    <div>
-          <p class="title">${book.title}</p>
-          <p class="author">${book.author}</p><br>
-          <button type="submit" class="removeBtn" id="${book.id}">Remove</button>
-          <br>
-    </div>
+<div
+class="container bg-light d-flex justify-content-between border border-dark p-2 w-50">
+<div>
+<p class="text-dark">"${book.title}" by ${book.author}</p>
+</div>
+<div>
+<button type="submit" class="btn btn-danger removeBtn" id="${book.id}">
+Remove
+</button>
+</div>
+</div>
     `;
     });
 
@@ -48,25 +53,24 @@ class Book {
   remove(id) {
     this.userBook = this.userBook.filter((book) => book.id.toString() !== id);
   }
-
-  static clear(title, author) {
-    title.value = '';
-    author.value = '';
-  }
 }
 
 const bookStore = new Book();
 bookStore.getBook();
 bookStore.showList();
 
-//Add EventListner
+// Add EventListner
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
+  if (title.value === '' && author.value === '') {
+    alert('Please fill up all fields');
+  }
   bookStore.addBooks(title.value, author.value);
   bookStore.setBook();
   bookStore.getBook();
-  console.log(bookStore.showList());
   bookList.innerHTML = bookStore.showList();
+  title.value = '';
+  author.value = '';
 });
 
 // remove

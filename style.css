@@ -7,6 +7,15 @@ body {
   overflow: auto;
 }
 
+#home-display {
+  visibility: visible;
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #showBook {
   visibility: hidden;
   margin: 0;

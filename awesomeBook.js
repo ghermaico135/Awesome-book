@@ -4,13 +4,14 @@ const bookList = document.querySelector('.booklist');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const addBtn = document.querySelector('#addBtn');
-const showBookList = document.querySelector('#showBookList');
+// const showBookList = document.querySelector('#showBookList');
 const addBookList = document.querySelector('#addNewBook');
 const contact = document.querySelector('#contact');
 const showBook = document.querySelector('#showBook');
 const addBooks = document.querySelector('#addBook');
 const showContact = document.querySelector('#showContact');
 const currentDate = document.querySelector('#current-date');
+const homePage = document.querySelector('#home-display');
 
 // book
 class Book {
@@ -110,22 +111,18 @@ document.addEventListener('click', (e) => {
   }
 });
 
-showBookList.addEventListener('click', () => {
-  showBook.style.visibility = 'visible';
-  addBooks.style.visibility = 'hidden';
-  showContact.style.visibility = 'hidden';
-});
-
 addBookList.addEventListener('click', () => {
   showBook.style.visibility = 'hidden';
   addBooks.style.visibility = 'visible';
   showContact.style.visibility = 'hidden';
+  homePage.style.visibility = 'hidden';
 });
 
 contact.addEventListener('click', () => {
   showBook.style.visibility = 'hidden';
   addBooks.style.visibility = 'hidden';
   showContact.style.visibility = 'visible';
+  homePage.style.visibility = 'hidden';
 });
 
 window.addEventListener('load', () => {

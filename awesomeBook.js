@@ -73,6 +73,10 @@ addBtn.addEventListener('click', (e) => {
   author.value = '';
 });
 
+window.addEventListener('load', () => {
+  bookList.innerHTML = bookStore.showList();
+});
+
 // remove
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('removeBtn')) {

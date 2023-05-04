@@ -7,6 +7,15 @@ body {
   overflow: auto;
 }
 
+.home-images {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(125, 200, 240, 0.8)), url(./library-.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 50vh;
+  margin: auto;
+  transform: translate(-50%, -50%);
+}
+
 #home-display {
   visibility: visible;
   margin: 0;

@@ -4,7 +4,7 @@ const bookList = document.querySelector('.booklist');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const addBtn = document.querySelector('#addBtn');
-// const showBookList = document.querySelector('#showBookList');
+const showBookList = document.querySelector('#showBookList');
 const addBookList = document.querySelector('#addNewBook');
 const contact = document.querySelector('#contact');
 const showBook = document.querySelector('#showBook');
@@ -109,6 +109,13 @@ document.addEventListener('click', (e) => {
     bookStore.setBook();
     bookList.innerHTML = bookStore.showList();
   }
+});
+
+showBookList.addEventListener('click', () => {
+  showBook.style.visibility = 'visible';
+  addBooks.style.visibility = 'hidden';
+  showContact.style.visibility = 'hidden';
+  homePage.style.visibility = 'hidden';
 });
 
 addBookList.addEventListener('click', () => {

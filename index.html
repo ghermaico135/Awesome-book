@@ -17,11 +17,13 @@
 		<header>
 			<nav class="navbar navbar-expand-sm bg-dark navbar-dark px-5 fixed-top">
 				<div class="container">
-					<a class="navbar-brand" href="#">Awesome Book</a>
+					<a class="navbar-brand" href="#home-display">Awesome Book</a>
 				</div>
 				<ul class="navbar-nav d-flex">
 					<li class="nav-item mx-3">
-						<a class="nav-link text-white" href="#" id="showBookList">List</a>
+						<a class="nav-link text-white active" href="#" id="showBookList"
+							>List</a
+						>
 					</li>
 					<li class="nav-item mx-3">
 						<a class="nav-link text-white" href="#" id="addNewBook">Add new</a>
@@ -36,9 +38,10 @@
 			<section>
 				<div id="current-date" class="mt-5"></div>
 			</section>
-			<section class="container" id="home-display">
-				<h1 class="h1 text-center mt-4 mb-5 title">All Awesome Books</h1>
-				<div class="booklist"></div>
+			<section class="container home-images" id="home-display">
+				<h1 class="h1 text-light text-center mt-5 p-5 title">
+					All Awesome Books
+				</h1>
 			</section>
 			<section class="container" id="showBook">
 				<h1 class="h1 text-center mt-4 mb-5 title">All Awesome Books</h1>
@@ -92,8 +95,10 @@
 
 		<footer class="fixed-bottom" id="footer-color">
 			<div class="bg-dark">
-				<ul class="d-flex">
-					<li class="text-light h4 p-2">Copyright@2023</li>
+				<ul>
+					<li class="text-light h4 p-2 text-center">
+						Awesome books Copyright@2023
+					</li>
 				</ul>
 			</div>
 			<div class="p-1"></div>

@@ -42,17 +42,17 @@ class Book {
     let content = '';
     this.userBook.forEach((book) => {
       content += `
-<div
-class="container bg-light d-flex justify-content-between border border-dark p-2">
-<div>
-<p class="text-dark">"${book.title}" by ${book.author}</p>
-</div>
-<div>
-<button type="submit" class="btn btn-danger removeBtn" id="${book.id}">
-Remove
-</button>
-</div>
-</div>
+            <div
+            class="container bg-light d-flex justify-content-between border border-dark p-2">
+            <div>
+            <p class="text-dark">"${book.title}" by ${book.author}</p>
+            </div>
+            <div>
+            <button type="submit" class="btn btn-danger removeBtn" id="${book.id}">
+            Remove
+            </button>
+            </div>
+            </div>
     `;
     });
 
@@ -71,10 +71,10 @@ Remove
     });
     let content = '';
     content = `
-<div id="current-date" class="p-2 float-end">
-<h3 class="text-dark">${d.format(this.date)}</h3>
-</div>
-`;
+    <div id="current-date" class="p-2 float-end">
+    <h3 class="text-dark">${d.format(this.date)}</h3>
+    </div>
+    `;
     return content;
   }
 }
@@ -87,7 +87,7 @@ bookStore.showList();
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (title.value === '' && author.value === '') {
-    alert('Please fill up all fields');
+    // alert('Please fill up all fields');
   }
   bookStore.addBooks(title.value, author.value);
   bookStore.setBook();
